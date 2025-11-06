@@ -1,0 +1,358 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "name": "n8n Workflow Documentation Toolset",
+    "description": "Comprehensive documentation access for building n8n workflows with 23 specialized tools covering triggers, data transformation, error handling, and more",
+    "author": "Community",
+    "version": "1.0.0",
+    "homepage": "https://github.com/yourusername/n8n-mci-toolset"
+  },
+  "settings": {
+    "cache": {
+      "enabled": true,
+      "ttl": 3600
+    },
+    "timeout": 30000
+  },
+  "mcpServers": {
+    "n8n-workflows": {
+      "metadata": {
+        "name": "n8n Workflow Documentation",
+        "description": "Access n8n documentation for workflow automation",
+        "version": "1.0.0"
+      },
+      "tools": [
+        {
+          "name": "n8n_workflow_basics",
+          "annotations": {
+            "title": "Docs: Workflow Basics",
+            "readOnlyHint": true,
+            "category": "fundamentals"
+          },
+          "description": "Get fundamental information about n8n workflows including creation, activation, components (nodes, connections, sticky notes), and workflow templates. Learn what workflows are, how to create them, and basic workflow structure. Use this when users need to understand core workflow concepts or are getting started.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/workflows/"
+          },
+          "tags": ["n8n", "workflows", "basics", "getting-started", "fundamentals"]
+        },
+        {
+          "name": "n8n_create_workflow",
+          "annotations": {
+            "title": "Docs: Create & Run Workflows",
+            "readOnlyHint": true,
+            "category": "fundamentals"
+          },
+          "description": "Learn how to create new workflows, add nodes to the canvas, configure trigger nodes, and run workflows manually or automatically. Covers the workflow creation process from start to finish including adding first steps and connecting nodes.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/workflows/create/"
+          },
+          "tags": ["n8n", "workflows", "create", "run", "getting-started"]
+        },
+        {
+          "name": "n8n_schedule_trigger",
+          "annotations": {
+            "title": "Docs: Schedule Trigger Node",
+            "readOnlyHint": true,
+            "category": "triggers"
+          },
+          "description": "Detailed documentation on the Schedule Trigger node for running workflows at fixed intervals. Covers all trigger intervals (seconds, minutes, hours, days, weeks, months), cron expressions for custom schedules, timezone configuration (workflow vs instance), and troubleshooting schedule timing issues. Essential for automated periodic workflows like daily reports, weekly backups, or monthly processing.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger/"
+          },
+          "tags": ["n8n", "triggers", "schedule", "cron", "automation", "timing", "periodic"]
+        },
+        {
+          "name": "n8n_webhook_trigger",
+          "annotations": {
+            "title": "Docs: Webhook Trigger Node",
+            "readOnlyHint": true,
+            "category": "triggers"
+          },
+          "description": "Comprehensive guide to the Webhook node for receiving data from external services via HTTP requests. Covers webhook URLs (test vs production), authentication methods (basic auth, header auth, JWT, IP whitelist), response modes (immediate, when last node finishes, using Respond to Webhook node, streaming), custom paths with parameters, and building API endpoints. Use when integrating with external services or building custom APIs.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/"
+          },
+          "tags": ["n8n", "webhook", "triggers", "http", "api", "authentication", "integration"]
+        },
+        {
+          "name": "n8n_manual_trigger",
+          "annotations": {
+            "title": "Docs: Manual Trigger Node",
+            "readOnlyHint": true,
+            "category": "triggers"
+          },
+          "description": "Learn about the Manual Trigger node for testing workflows before adding automatic triggers. Essential for workflow development and debugging. Covers when to use manual triggers, common errors, and workflow testing strategies.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger/"
+          },
+          "tags": ["n8n", "triggers", "manual", "testing", "development"]
+        },
+        {
+          "name": "n8n_respond_webhook",
+          "annotations": {
+            "title": "Docs: Respond to Webhook Node",
+            "readOnlyHint": true,
+            "category": "api"
+          },
+          "description": "Learn how to use the Respond to Webhook node to send custom responses back to webhook callers. Covers all response data options (JSON, text, HTML, binary files, JWT tokens, redirects), custom headers, content types, status codes, handling multiple data items, and building API endpoints. Use when you need to return processed data to the webhook caller.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/"
+          },
+          "tags": ["n8n", "webhook", "response", "api", "http"]
+        },
+        {
+          "name": "n8n_error_handling",
+          "annotations": {
+            "title": "Docs: Error Handling",
+            "readOnlyHint": true,
+            "category": "reliability"
+          },
+          "description": "Complete guide to error handling in n8n workflows including Error Trigger node, error workflows for catching failures, Continue on Error option for individual nodes, Stop and Error node for forced failures, Try/Catch blocks for isolated error handling, and execution debugging. Learn to build resilient workflows that handle failures gracefully with notifications, retries, and alternative paths. Essential for production workflows.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/flow-logic/error-handling/"
+          },
+          "tags": ["n8n", "errors", "debugging", "troubleshooting", "resilience", "production", "reliability"]
+        },
+        {
+          "name": "n8n_debug_executions",
+          "annotations": {
+            "title": "Docs: Debug Executions",
+            "readOnlyHint": true,
+            "category": "debugging"
+          },
+          "description": "Learn debugging techniques including viewing execution logs, using Debug in editor feature to pin failed execution data and re-run workflows, Copy to editor for successful executions, loading previous execution data, and identifying error sources. Essential for troubleshooting workflow failures and understanding data flow.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/workflows/executions/debug/"
+          },
+          "tags": ["n8n", "debugging", "executions", "troubleshooting", "testing"]
+        },
+        {
+          "name": "n8n_expressions",
+          "annotations": {
+            "title": "Docs: Expressions",
+            "readOnlyHint": true,
+            "category": "data"
+          },
+          "description": "Comprehensive guide to n8n expressions for dynamic data manipulation. Covers accessing JSON data with $json variable, using JavaScript in expressions with IIFE syntax, JMESPath for querying JSON, built-in variables ($input, $node, $workflow), accessing data from previous nodes, and transforming values dynamically. Use when you need to reference or transform data between nodes.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/code/expressions/"
+          },
+          "tags": ["n8n", "expressions", "javascript", "data", "dynamic", "jmespath"]
+        },
+        {
+          "name": "n8n_data_transformation",
+          "annotations": {
+            "title": "Docs: Data Transformation Functions",
+            "readOnlyHint": true,
+            "category": "data"
+          },
+          "description": "Learn about built-in data transformation helper functions for strings, arrays, objects, dates, and numbers. Covers functions like .toNumber(), .toBoolean(), .isEmpty(), .merge(), .extractEmail(), .extractUrl(), and many more. These functions make data manipulation easier in expressions without writing complex JavaScript.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/code/builtin/data-transformation-functions/"
+          },
+          "tags": ["n8n", "data", "transformation", "functions", "helpers", "expressions"]
+        },
+        {
+          "name": "n8n_code_node",
+          "annotations": {
+            "title": "Docs: Code Node",
+            "readOnlyHint": true,
+            "category": "custom-logic"
+          },
+          "description": "Complete guide to the Code node for adding JavaScript or Python to workflows. Learn how to access incoming data with $input, transform data structures, create custom logic, use built-in methods and variables, handle multiple items, install npm packages, and return properly formatted data. Essential for complex data processing beyond standard nodes.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/code/"
+          },
+          "tags": ["n8n", "code", "javascript", "python", "custom-logic", "programming"]
+        },
+        {
+          "name": "n8n_data_structure",
+          "annotations": {
+            "title": "Docs: Data Structure",
+            "readOnlyHint": true,
+            "category": "data"
+          },
+          "description": "Understand n8n's required data structure including array of objects format, JSON wrapper structure with 'json' key, item linking between nodes, binary data handling, and ETL (Extract, Transform, Load) concepts. Learn how data flows between nodes and required data formatting for proper workflow execution. Use when debugging data format issues.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/data/"
+          },
+          "tags": ["n8n", "data", "structure", "arrays", "objects", "format"]
+        },
+        {
+          "name": "n8n_data_mapping",
+          "annotations": {
+            "title": "Docs: Data Mapping",
+            "readOnlyHint": true,
+            "category": "data"
+          },
+          "description": "Learn data mapping techniques including drag-and-drop visual mapping, accessing linked items with $('NodeName').item, item linking chains across nodes, mapping expressions with bracket and dot notation, and referencing data from previous nodes. Covers both visual data mapping and expression-based approaches for connecting node outputs to inputs.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/data/data-mapping/"
+          },
+          "tags": ["n8n", "data", "mapping", "linking", "expressions", "connections"]
+        },
+        {
+          "name": "n8n_transformation_nodes",
+          "annotations": {
+            "title": "Docs: Data Transformation Nodes",
+            "readOnlyHint": true,
+            "category": "data"
+          },
+          "description": "Documentation on dedicated transformation nodes including Aggregate (grouping items together), Limit (removing excess items), Remove Duplicates (identifying identical items across fields), Sort (ordering and randomizing), Split Out (separating list items), and Summarize (pivot table-like aggregation). Essential for data manipulation without writing code.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/data/"
+          },
+          "tags": ["n8n", "transformation", "aggregate", "split", "sort", "deduplicate", "data"]
+        },
+        {
+          "name": "n8n_flow_logic",
+          "annotations": {
+            "title": "Docs: Flow Logic & Control",
+            "readOnlyHint": true,
+            "category": "logic"
+          },
+          "description": "Learn about flow control nodes for building complex workflows including If node (conditional branching), Switch node (multiple conditions), Merge node (combining data streams), Loop node (iteration), Filter node, and Execute Workflow (calling sub-workflows). Master workflow branching, merging, conditional execution patterns, and creating reusable workflow components.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/flow-logic/"
+          },
+          "tags": ["n8n", "flow", "logic", "conditional", "branching", "if", "switch", "merge"]
+        },
+        {
+          "name": "n8n_http_request",
+          "annotations": {
+            "title": "Docs: HTTP Request Node",
+            "readOnlyHint": true,
+            "category": "api"
+          },
+          "description": "Complete guide to the HTTP Request node for making API calls. Covers all HTTP methods (GET, POST, PUT, PATCH, DELETE), query parameters, headers, authentication (basic, OAuth1, OAuth2, API key, JWT), request body formats (JSON, form data, multipart, raw), response handling, pagination, error management, and SSL certificates. Essential for integrating with external REST APIs.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/"
+          },
+          "tags": ["n8n", "http", "api", "rest", "requests", "integration", "external"]
+        },
+        {
+          "name": "n8n_workflow_settings",
+          "annotations": {
+            "title": "Docs: Workflow Settings",
+            "readOnlyHint": true,
+            "category": "configuration"
+          },
+          "description": "Comprehensive guide to workflow settings including timezone configuration (affects Schedule Trigger), execution order (v0 vs v1), error workflow assignment for automatic failure handling, workflow timeouts, execution data saving preferences (manual, production, failed), caller policy for sub-workflows, and execution progress saving. Configure these settings for proper workflow behavior, debugging, and data retention.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/workflows/settings/"
+          },
+          "tags": ["n8n", "settings", "configuration", "timezone", "timeout", "execution"]
+        },
+        {
+          "name": "n8n_workflow_activation",
+          "annotations": {
+            "title": "Docs: Activate Workflows",
+            "readOnlyHint": true,
+            "category": "execution"
+          },
+          "description": "Learn how to activate workflows for automatic execution, understand the difference between active and inactive states, configure automatic trigger nodes, monitor workflow status, and handle activation errors. Essential for moving workflows from development to production.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/workflows/create/"
+          },
+          "tags": ["n8n", "activation", "production", "execution", "triggers"]
+        },
+        {
+          "name": "n8n_ai_workflows",
+          "annotations": {
+            "title": "Docs: AI Workflows",
+            "readOnlyHint": true,
+            "category": "ai"
+          },
+          "description": "Introduction to building AI-powered workflows including AI Agent node, chat models (OpenAI, Google Gemini, Anthropic Claude, Groq, Azure), AI tools and capabilities, conversation memory management, prompt engineering, and combining AI with traditional automation. Learn to create chatbots, AI assistants, and workflows that combine LLMs with business processes for intelligent task processing.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/advanced-ai/"
+          },
+          "tags": ["n8n", "ai", "llm", "chatbot", "agent", "openai", "claude", "gemini"]
+        },
+        {
+          "name": "n8n_quickstart",
+          "annotations": {
+            "title": "Docs: Quickstart Tutorial",
+            "readOnlyHint": true,
+            "category": "tutorial"
+          },
+          "description": "Step-by-step beginner tutorial for building your first n8n workflow. Covers adding nodes to canvas, connecting nodes together, configuring node parameters, testing workflows with Execute button, scheduling with triggers, using If node for conditional logic, and activating workflows. Includes practical example of fetching NASA API data and sending to external service.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/try-it-out/"
+          },
+          "tags": ["n8n", "tutorial", "quickstart", "beginner", "getting-started", "first-workflow"]
+        },
+        {
+          "name": "n8n_credentials",
+          "annotations": {
+            "title": "Docs: Credentials & Authentication",
+            "readOnlyHint": true,
+            "category": "security"
+          },
+          "description": "Learn credential management for securely connecting to external services. Covers creating and storing credentials, credential types (OAuth2, OAuth1, API keys, basic auth, JWT), sharing credentials between workflows, credential security and encryption, testing connections, and managing authentication for 400+ integrations. Essential for secure workflow connections to external APIs and services.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/credentials/"
+          },
+          "tags": ["n8n", "credentials", "authentication", "oauth", "security", "api-keys"]
+        },
+        {
+          "name": "n8n_workflow_templates",
+          "annotations": {
+            "title": "Docs: Workflow Templates",
+            "readOnlyHint": true,
+            "category": "templates"
+          },
+          "description": "Learn about using and creating workflow templates for common automation patterns. Covers browsing template library with 900+ pre-built workflows, importing templates into your instance, customizing templates for your use case, sharing workflows as JSON, and workflow export/import. Templates provide pre-built solutions for frequent use cases like data synchronization, notifications, CRM integrations, and API workflows.",
+          "execution": {
+            "type": "http",
+            "method": "GET",
+            "url": "https://docs.n8n.io/workflows/templates/"
+          },
+          "tags": ["n8n", "templates", "examples", "import", "export", "sharing"]
+        }
+      ]
+    }
+  }
+}

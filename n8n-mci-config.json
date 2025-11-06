@@ -5,7 +5,7 @@
     "description": "Comprehensive documentation access for building n8n workflows with 23 specialized tools covering triggers, data transformation, error handling, and more",
     "author": "Community",
     "version": "1.0.0",
-    "homepage": "https://github.com/yourusername/n8n-mci-toolset"
+    "homepage": "https://github.com/Faycel2015/n8n-mci"
   },
   "settings": {
     "cache": {
